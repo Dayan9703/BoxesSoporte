@@ -3,8 +3,10 @@ const router = Router();
 
 const {renderAbout, renderIndex} = require('../controllers/index.controller')
 
+const {isAuthenticated} = require('../helpers/auth');
+
 router.get('/', renderIndex);
 
-router.get('/about', renderAbout);
+router.get('/about',isAuthenticated, renderAbout);
 
 module.exports = router;
