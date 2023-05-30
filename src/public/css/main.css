@@ -14,7 +14,14 @@ body {
 .responsive {
     width: 100%;
     height: auto;
-  }
+}
+
+.responsive2 {
+    width: 70%;
+    height: auto;
+    margin-top: 10%;
+    
+}
 
 .container {
     width: 100%;
@@ -28,17 +35,17 @@ body {
 }
 
 
-.headerblack{
+.headerblack {
     background: #010101;
     padding: 8px;
 }
 
-.topname{
+.topname {
     color: #edeae7;
     font-size: 12px;
     padding: 5px;
     margin-bottom: 0;
-    font-family:"Calibri", sans-serif;
+    font-family: "Calibri", sans-serif;
 }
 
 .div1 {
@@ -46,7 +53,7 @@ body {
     border: 1px solid #b3b3b3;
 }
 
-.div1-1{
+.div1-1 {
     display: grid;
     grid-template-columns: 58% 44%;
 }
@@ -95,7 +102,7 @@ body {
     gap: 0.4em;
 }
 
-.div6{
+.div6 {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 30px 30px 30px 30px;
@@ -106,7 +113,7 @@ body {
     gap: 0.4em;
 }
 
-.div6-1{
+.div6-1 {
     display: grid;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -122,10 +129,10 @@ body {
     gap: 0.4em;
 }
 
-.button2{
+.button2 {
     background: transparent;
     border: transparent;
-    
+
 }
 
 .button2:hover {
@@ -144,7 +151,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-family:Calibri (Body);
+    font-family: Calibri (Body);
     transition: all 0.9s;
     text-align: center;
     font-size: 12px;
@@ -208,4 +215,9 @@ body {
 
 .logo {
     width: 30%;
+}
+
+.logo2 {
+    display: block;
+    margin: auto;
 }
