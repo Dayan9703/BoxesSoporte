@@ -1,11 +1,13 @@
 const {Router}  = require('express');
 const router = Router();
 
-const {renderAbout, renderIndex} = require('../controllers/index.controller')
+const {renderAbout, renderIndex, renderTerms} = require('../controllers/index.controller')
 
 const {isAuthenticated} = require('../helpers/auth');
 
 router.get('/', renderIndex);
+
+router.get('/terms', renderTerms);
 
 router.get('/about',isAuthenticated, renderAbout);
 

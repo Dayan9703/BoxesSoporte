@@ -39,15 +39,21 @@ usersCtrl.signup = async (req, res) => {
         })
     } else {
         const emailUser = await User.findOne({ email });
+        const phoneUser = await User.findOne({ phone });
+
         if (emailUser) {
             req.flash('error_msg', 'The email is already in use.');
             res.redirect('/users/signup');
-        } else {
+        }if (phoneUser) {
+            req.flash('error_msg', 'The phone is already in use.');
+            res.redirect('/users/signup');
+        }
+         else {
             const newUser = new User({ name, email, phone, password});
             newUser.password = await newUser.encryptPassword(password);
             await newUser.save();
             req.flash('success_msg', 'You are registered');
-            res.redirect('/users/signin');
+            res.redirect('/terms');
         }
     }
 };
