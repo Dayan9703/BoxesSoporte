@@ -87,7 +87,8 @@ footer{
 .responsive2 {
     width: 70%;
     height: auto;
-    margin-top: 20%;
+    margin-top: 14%;
+    margin-bottom: 14%;
     
 }
 
@@ -161,7 +162,7 @@ footer{
 
 .div5 {
     display: grid;
-    grid-template-rows: 190px 455px 45px;
+    grid-template-rows: 105px 588px ;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 5px;
@@ -173,7 +174,7 @@ footer{
 .div6 {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 30px 30px 30px 80px;
+    grid-template-rows: 30px 30px 30px;
     margin-top: 5px;
     margin-bottom: 10px;
     margin-right: 15px;
@@ -246,6 +247,20 @@ footer{
     text-align: center;
     font-size: 12px;
     background: #649499;
+}
+.boton1-2 {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: Calibri (Body);
+    transition: all 0.9s;
+    text-align: center;
+    font-size: 12px;
+    background: #041520;
 }
 
 .boton2 {
