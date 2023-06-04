@@ -2,42 +2,50 @@ body {
     background: #cecece;
 }
 
-footer{
+footer {
     background-color: #111;
 }
-.footerContainer{
+
+.footerContainer {
     width: 100%;
     padding: 70px 30px 20px;
 }
-.socialIcons{
+
+.socialIcons {
     display: flex;
     justify-content: center;
 }
-.socialIcons a{
+
+.socialIcons a {
     text-decoration: none;
     padding: 10px;
     background-color: white;
     margin: 10px;
     border-radius: 50%;
 }
-.socialIcons a i{
+
+.socialIcons a i {
     font-size: 2em;
     color: black;
     opacity: 0.9;
 }
-.socialIcons a:hover{
+
+.socialIcons a:hover {
     background-color: #111;
     transition: 0.5s;
 }
-.footerNav{
+
+.footerNav {
     margin: 30px 0;
 }
-.footerNav ul{
+
+.footerNav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
 }
-.footerNav ul li a{
+
+.footerNav ul li a {
     color: white;
     margin: 20px;
     text-decoration: none;
@@ -45,22 +53,27 @@ footer{
     opacity: 0.7;
     transition: 0.5s;
 }
-.footerNav ul li a:hover{
+
+.footerNav ul li a:hover {
     opacity: 1;
 }
-.footerBottom{
+
+.footerBottom {
     background-color: #000;
     padding: 20px;
     text-align: center;
 }
-.footerBottom p{
+
+.footerBottom p {
     color: white;
 }
-@media (max-width:700px){
-    .footerNav ul{
+
+@media (max-width:700px) {
+    .footerNav ul {
         flex-direction: column;
     }
-    .footerNav ul li{
+
+    .footerNav ul li {
         width: 100%;
         text-align: center;
         margin: 10px;
@@ -89,7 +102,7 @@ footer{
     height: auto;
     margin-top: 14%;
     margin-bottom: 14%;
-    
+
 }
 
 .container {
@@ -162,7 +175,7 @@ footer{
 
 .div5 {
     display: grid;
-    grid-template-rows: 105px 588px ;
+    grid-template-rows: 105px 588px;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 5px;
@@ -248,6 +261,7 @@ footer{
     font-size: 12px;
     background: #649499;
 }
+
 .boton1-2 {
     text-decoration: none;
     display: inline-block;
