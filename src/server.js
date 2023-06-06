@@ -1,5 +1,6 @@
 const express = require('express');
-const { partials } = require('handlebars');
+const { partials, helpers } = require('handlebars');
+const Handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const morgan = require('morgan');
@@ -7,6 +8,7 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 //Initialization
 const app = express();
@@ -20,7 +22,47 @@ app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
-    extname: '.hbs'
+    extname: '.hbs',
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
+    helpers: {
+        ifCond: function(v1, operator, v2, options){
+            switch (operator)
+            {
+                case "==":
+                    return (v1==v2)?options.fn(this):options.inverse(this);
+        
+                case "!=":
+                    return (v1!=v2)?options.fn(this):options.inverse(this);
+        
+                case "===":
+                    return (v1===v2)?options.fn(this):options.inverse(this);
+        
+                case "!==":
+                    return (v1!==v2)?options.fn(this):options.inverse(this);
+        
+                case "&&":
+                    return (v1&&v2)?options.fn(this):options.inverse(this);
+        
+                case "||":
+                    return (v1||v2)?options.fn(this):options.inverse(this);
+        
+                case "<":
+                    return (v1<v2)?options.fn(this):options.inverse(this);
+        
+                case "<=":
+                    return (v1<=v2)?options.fn(this):options.inverse(this);
+        
+                case ">":
+                    return (v1>v2)?options.fn(this):options.inverse(this);
+        
+                case ">=":
+                 return (v1>=v2)?options.fn(this):options.inverse(this);
+        
+                default:
+                    return eval(""+v1+operator+v2)?options.fn(this):options.inverse(this);
+            }
+        }
+    }
 }));
 
 app.set('view engine', '.hbs');

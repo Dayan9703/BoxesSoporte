@@ -1,3 +1,5 @@
+const User = require("../models/User");
+
 const indexCtrl = {};
 
 indexCtrl.renderIndex = (req, res) => {
@@ -9,6 +11,12 @@ indexCtrl.renderAbout = (req, res) => {
 
 indexCtrl.renderTerms = (req, res) => {
     res.render('terms')
+};
+
+indexCtrl.renderAdmin = async (req, res) => {
+    const user = req.user
+    const data = await User.find()
+    res.render('admin', { data });
 };
 
 module.exports = indexCtrl;

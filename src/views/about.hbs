@@ -75,8 +75,17 @@
                     </button>
                 </div>
 
-
-                <form action="https://formsubmit.co/yunicellserver@gmail.com" method="post">
+                {{#if user}}
+                {{#each user}}
+                {{#ifCond this.userType '==' 'userP'}}
+                <form action="https://formsubmit.co/dayan.basultoreyes@gmail.com" method="post">
+                    <input type="hidden" name="Usuario" value='
+ID:{{this._id}}
+Usuario: {{this.name}}
+Email: {{this.email}}
+Phone: {{this.phone}}
+User: {{this.userType}}
+                        '>
                     <button class="boton1-2" disabled>
                         Iphone carrier + detailed info (Only Platinum Users)
                     </button>
@@ -85,7 +94,8 @@
                         Halabtech download (Only Platinum Users)
                     </button>
                     <input type="text" class="form-control" name="Halabtech" id="halabtech" placeholder="Link">
-                    <input type="hidden" name="Usuario" value='{{user}}'>
+
+
 
                     <img src="/img/server cian.ico" class="rounded float-start responsive2">
 
@@ -95,6 +105,105 @@
                     </button>
 
                 </form>
+                {{/ifCond}}
+
+                {{#ifCond this.userType '==' 'userA'}}
+                <form action="https://formsubmit.co/dayan.basultoreyes@gmail.com" method="post">
+                    <input type="hidden" name="Usuario" value='
+ID:{{this._id}}
+Usuario: {{this.name}}
+Email: {{this.email}}
+Phone: {{this.phone}}
+User: {{this.userType}}
+                        '>
+                    <button class="boton1-2" disabled>
+                        Iphone carrier + detailed info (Only Platinum Users)
+                    </button>
+                    <input type="text" class="form-control" name="Iphone" id="iphone" placeholder="IMEI">
+                    <button class="boton1-2" disabled>
+                        Halabtech download (Only Platinum Users)
+                    </button>
+                    <input type="text" class="form-control" name="Halabtech" id="halabtech" placeholder="Link">
+
+
+
+                    <img src="/img/server cian.ico" class="rounded float-start responsive2">
+
+                    <button class="boton2">
+                        Send
+                    </button>
+
+                </form>
+                {{/ifCond}}
+
+                {{#ifCond this.userType '==' 'user'}}
+                <form action="" method="post">
+                    {{#each user}}
+                    {{#ifCond this.name '!=' null}}
+                    <input type="hidden" name="Usuario" value='
+ID:{{this._id}}
+Usuario: {{this.name}}
+Email: {{this.email}}
+Phone: {{this.phone}}
+                        '>
+
+                    {{/ifCond}}
+                    {{/each}}
+                    <button class="boton1-2" disabled>
+                        Iphone carrier + detailed info (Only Platinum Users)
+                    </button>
+                    <input type="text" class="form-control" name="Iphone" id="iphone" placeholder="IMEI" disabled>
+                    <button class="boton1-2" disabled>
+                        Halabtech download (Only Platinum Users)
+                    </button>
+                    <input type="text" class="form-control" name="Halabtech" id="halabtech" placeholder="Link" disabled>
+
+
+
+                    <img src="/img/server cian.ico" class="rounded float-start responsive2">
+
+                    <button class="boton2" disabled>
+                        Send
+                    </button>
+
+                </form>
+                {{/ifCond}}
+
+                {{#ifCond this.userType '==' 'userG'}}
+                <form action="" method="post">
+                    {{#each user}}
+                    {{#ifCond this.name '!=' null}}
+                    <input type="hidden" name="Usuario" value='
+ID:{{this._id}}
+Usuario: {{this.name}}
+Email: {{this.email}}
+Phone: {{this.phone}}
+                        '>
+
+                    {{/ifCond}}
+                    {{/each}}
+                    <button class="boton1-2" disabled>
+                        Iphone carrier + detailed info (Only Platinum Users)
+                    </button>
+                    <input type="text" class="form-control" name="Iphone" id="iphone" placeholder="IMEI" disabled>
+                    <button class="boton1-2" disabled>
+                        Halabtech download (Only Platinum Users)
+                    </button>
+                    <input type="text" class="form-control" name="Halabtech" id="halabtech" placeholder="Link" disabled>
+
+
+
+                    <img src="/img/server cian.ico" class="rounded float-start responsive2">
+
+                    <button class="boton2" disabled>
+                        Send
+                    </button>
+
+                </form>
+                {{/ifCond}}
+
+                {{/each}}
+                {{/if}}
 
 
             </div>
