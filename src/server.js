@@ -25,41 +25,40 @@ app.engine('.hbs', exphbs.engine({
     extname: '.hbs',
     handlebars: allowInsecurePrototypeAccess(Handlebars),
     helpers: {
-        ifCond: function(v1, operator, v2, options){
-            switch (operator)
-            {
+        ifCond: function (v1, operator, v2, options) {
+            switch (operator) {
                 case "==":
-                    return (v1==v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 == v2) ? options.fn(this) : options.inverse(this);
+
                 case "!=":
-                    return (v1!=v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 != v2) ? options.fn(this) : options.inverse(this);
+
                 case "===":
-                    return (v1===v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 === v2) ? options.fn(this) : options.inverse(this);
+
                 case "!==":
-                    return (v1!==v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+
                 case "&&":
-                    return (v1&&v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 && v2) ? options.fn(this) : options.inverse(this);
+
                 case "||":
-                    return (v1||v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 || v2) ? options.fn(this) : options.inverse(this);
+
                 case "<":
-                    return (v1<v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 < v2) ? options.fn(this) : options.inverse(this);
+
                 case "<=":
-                    return (v1<=v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+
                 case ">":
-                    return (v1>v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 > v2) ? options.fn(this) : options.inverse(this);
+
                 case ">=":
-                 return (v1>=v2)?options.fn(this):options.inverse(this);
-        
+                    return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+
                 default:
-                    return eval(""+v1+operator+v2)?options.fn(this):options.inverse(this);
+                    return eval("" + v1 + operator + v2) ? options.fn(this) : options.inverse(this);
             }
         }
     }

@@ -1,10 +1,10 @@
 const { Router } = require('express');
 const router = Router();
 
-const { renderAbout, renderIndex, renderTerms , renderAdmin, renderEditForm, updateUser} = require('../controllers/index.controller')
+const { renderAbout, renderIndex, renderTerms, renderAdmin, renderEditForm, updateUser } = require('../controllers/index.controller')
 
 
-const { getItems, updateItem} = require('../controllers/users.db')
+const { getItems, updateItem } = require('../controllers/users.db')
 
 const { isAuthenticated, isAdmin } = require('../helpers/auth');
 
