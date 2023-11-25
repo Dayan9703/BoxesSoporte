@@ -43,10 +43,10 @@ usersCtrl.signup = async (req, res) => {
 
         if (emailUser) {
             req.flash('error_msg', 'The email is already in use.');
-            res.redirect('/users/signup');
+            return res.redirect('/users/signup');
         } if (phoneUser) {
             req.flash('error_msg', 'The phone is already in use.');
-            res.redirect('/users/signup');
+            return res.redirect('/users/signup');
         }
         else {
             const newUser = new User({ name, email, phone, password });
