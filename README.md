@@ -1,5 +1,4 @@
 # BoxesSoporte
-
 .env (Ejemplo)
 <<
 NOTES_APP_MONGODB_HOST=127.0.0.1
