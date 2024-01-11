@@ -70,11 +70,25 @@ app.set('view engine', '.hbs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.set('trust proxy', 1);
+
 app.use(session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
+cookie:{
+    secure: true,
+    maxAge:60000
+       },
+store: new RedisStore(),
+secret: 'secret',
+saveUninitialized: true,
+resave: false
 }));
+
+app.use(function(req,res,next){
+if(!req.session){
+    return next(new Error('Oh no')) //handle error
+}
+next() //otherwise continue
+});
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
